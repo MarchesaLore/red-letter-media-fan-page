@@ -2,8 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import styles from "./Explore.module.scss";
 
-const API_KEY = "AIzaSyBvmBLz6afOxFRS1QgKAJRvKVnFltV_bQc";
-const CHANNEL_ID = "UCrTNhL_yO3tPTdQ5XgmmWjA"; //Red Letter Media's channel ID
+const CHANNEL_ID = "UCrTNhL_yO3tPTdQ5XgmmWjA"; // Red Letter Media's channel ID
 const YOUTUBE_API_URL = "https://www.googleapis.com/youtube/v3/search";
 
 interface Video {
@@ -30,7 +29,7 @@ const Explore = () => {
       try {
         const response = await axios.get(YOUTUBE_API_URL, {
           params: {
-            key: API_KEY,
+            key: process.env.REACT_APP_YOUTUBE_API_KEY, // Use the environment variable here
             channelId: CHANNEL_ID,
             part: "snippet",
             maxResults: 10, // Adjust to however many videos you want to display
