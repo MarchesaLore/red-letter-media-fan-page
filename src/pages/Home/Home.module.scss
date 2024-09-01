@@ -1,0 +1,24 @@
+@import "../../styles/variables";
+
+.homeContainer {
+  text-align: center;
+  padding: 50px;
+  color: $text-color;
+  background-color: $background-color;
+}
+
+.startButton {
+  margin: 20px;
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: $primary-color;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: $button-hover-color;
+  }
+}
